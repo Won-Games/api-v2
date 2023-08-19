@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developers",
+  "info": {
+    "singularName": "developer",
+    "pluralName": "developers",
+    "displayName": "developer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
