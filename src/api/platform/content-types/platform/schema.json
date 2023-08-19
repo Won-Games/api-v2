@@ -19,6 +19,12 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "mappedBy": "platforms"
     }
   }
 }

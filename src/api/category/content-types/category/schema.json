@@ -20,6 +20,12 @@
       "type": "uid",
       "targetField": "name",
       "required": false
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "mappedBy": "categories"
     }
   }
 }
