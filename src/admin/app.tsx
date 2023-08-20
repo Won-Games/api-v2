@@ -32,6 +32,10 @@ export default {
         },
       },
     },
+    tutorials: false,
+    notifications: {
+      releases: false,
+    },
   },
   bootstrap() {},
 };
