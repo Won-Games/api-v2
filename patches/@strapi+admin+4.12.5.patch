@@ -1,0 +1,57 @@
+diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
+index 8fb94c5..277da2a 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
++++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/HomeHeader.js
+@@ -30,33 +30,12 @@ const HomeHeader = ({ hasCreatedContentType, onCreateCT }) => {
+                 })}
+           </Typography>
+           <WordWrap textColor="neutral600" variant="epsilon">
+-            {hasCreatedContentType
+-              ? formatMessage({
+-                  id: 'app.components.HomePage.welcomeBlock.content.again',
+-                  defaultMessage:
+-                    'We hope you are making progress on your project! Feel free to read the latest news about Strapi. We are giving our best to improve the product based on your feedback.',
+-                })
+-              : formatMessage({
+-                  id: 'app.components.HomePage.welcomeBlock.content',
+-                  defaultMessage:
+-                    'Congrats! You are logged as the first administrator. To discover the powerful features provided by Strapi, we recommend you to create your first Content type!',
+-                })}
++            Welcome to Won Games Admin! Add more games, categories and publishers from Content Manager.
+           </WordWrap>
+-          {hasCreatedContentType ? (
+-            <Link isExternal href="https://strapi.io/blog">
+-              {formatMessage({
+-                id: 'app.components.HomePage.button.blog',
+-                defaultMessage: 'See more on the blog',
+-              })}
+-            </Link>
+-          ) : (
+-            <Button size="L" onClick={onCreateCT} endIcon={<ArrowRight />}>
+-              {formatMessage({
+-                id: 'app.components.HomePage.create',
+-                defaultMessage: 'Create your first Content type',
+-              })}
+-            </Button>
+-          )}
++
++          <Link isExternal href="https://reactavancado.com.br">
++              Learn more in our course!
++          </Link>
+         </Flex>
+       </Box>
+     </div>
+diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
+index a22f746..6c88177 100644
+--- a/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
++++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
+@@ -76,9 +76,6 @@ export const HomePageCE = () => {
+             </GridItem>
+           </Grid>
+           <Grid gap={6}>
+-            <GridItem col={8} s={12}>
+-              {showGuidedTour ? <GuidedTourHomepage /> : <ContentBlocks />}
+-            </GridItem>
+             <GridItem col={4} s={12}>
+               <SocialLinks />
+             </GridItem>
