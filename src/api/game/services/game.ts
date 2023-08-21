@@ -1,15 +1,17 @@
 /**
  * game service
  */
-
+import axios from "axios";
 import { factories } from "@strapi/strapi";
 
 export default factories.createCoreService("api::game.game", () => ({
   async populate(params) {
-    const cat = await strapi.service("api::category.category").find({
-      filters: { name: params.category },
-    });
+    const gogApiUrl = `https://www.gog.com/games/ajax/filtered?mediaType=game?sort=rating`;
 
-    console.log(cat);
+    const {
+      data: { products },
+    } = await axios.get(gogApiUrl);
+
+    console.log(products[1]);
   },
 }));
