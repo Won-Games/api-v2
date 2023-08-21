@@ -17,9 +17,11 @@
     "@strapi/plugin-i18n": "4.12.5",
     "@strapi/plugin-users-permissions": "4.12.5",
     "@strapi/strapi": "4.12.5",
+    "jsdom": "^22.1.0",
     "patch-package": "^8.0.0",
     "pg": "8.8.0",
-    "postinstall-postinstall": "^2.1.0"
+    "postinstall-postinstall": "^2.1.0",
+    "slugify": "^1.6.6"
   },
   "author": {
     "name": "A Strapi developer"
