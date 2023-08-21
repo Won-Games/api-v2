@@ -3,6 +3,7 @@
  */
 import axios from "axios";
 import { JSDOM } from "jsdom";
+import slugify from "slugify";
 import { factories } from "@strapi/strapi";
 
 async function getGameInfo(slug) {
@@ -40,6 +41,24 @@ export default factories.createCoreService("api::game.game", () => ({
       data: { products },
     } = await axios.get(gogApiUrl);
 
-    console.log(await getGameInfo(products[2].slug));
+    products[2].developers.map(async (developer) => {
+      await strapi.service("api::developer.developer").create({
+        data: {
+          name: developer,
+          slug: slugify(developer, { strict: true, lower: true }),
+        },
+      });
+    });
+
+    products[2].publishers.map(async (publisher) => {
+      await strapi.service("api::publisher.publisher").create({
+        data: {
+          name: publisher,
+          slug: slugify(publisher, { strict: true, lower: true }),
+        },
+      });
+    });
+
+    // console.log(await getGameInfo(products[2].slug));
   },
 }));
